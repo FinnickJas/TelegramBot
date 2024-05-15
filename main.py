@@ -1,10 +1,10 @@
-﻿import telebot
+﻿import telebot #Импорт главной библеотеки
 from telebot import types
 
-bot = telebot.TeleBot('7044171753:AAHqvew9NM89ki-Hbze7Ep1DhDURPcEYVqw')
+bot = telebot.TeleBot('7044171753:AAHqvew9NM89ki-Hbze7Ep1DhDURPcEYVqw') #Токен бота для того чтобы код и бот связались
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start']) #Реакция на команду /start
 def start(message):
     markup = types.ReplyKeyboardMarkup()
     webapp = types.WebAppInfo("https://finnickjas.github.io/TelegramBot/")
@@ -17,4 +17,4 @@ def start(message):
 async def webapp(message: types.Message):
    bot.send_message(message.WebAppData.data)
 
-bot.polling(non_stop=True)
+bot.polling(non_stop=True) #Команда для бесконечной работы бота до выключения программы
